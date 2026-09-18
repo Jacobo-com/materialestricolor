@@ -100,6 +100,7 @@ border-radius:10px;
 text-decoration:none;
 font-size:20px;
 font-weight:bold;
+text-align: center;
 }
 
 .btn-negro{
@@ -109,6 +110,11 @@ color:white;
 
 .btn-verde{
 background:#25D366;
+color:white;
+}
+
+.btn-rojo{
+background:#ce1126;
 color:white;
 }
 
@@ -125,6 +131,13 @@ gap:25px;
 padding:0 40px 60px;
 }
 
+/* ENLACES DE LAS TARJETAS DE PRODUCTOS HACIA WHATSAPP */
+.card-link {
+text-decoration: none;
+color: inherit;
+display: block;
+}
+
 .card{
 background:white;
 border-radius:15px;
@@ -132,7 +145,6 @@ overflow:hidden;
 box-shadow:0 5px 15px rgba(0,0,0,.1);
 transition: transform 0.2s, box-shadow 0.2s;
 position: relative;
-cursor: pointer;
 }
 
 .card:hover {
@@ -157,7 +169,7 @@ background: white;
 position: absolute;
 top: 15px;
 right: 15px;
-background: #111;
+background: #25D366;
 color: white;
 padding: 8px 15px;
 border-radius: 30px;
@@ -210,6 +222,21 @@ font-size:24px;
 line-height:1.8;
 }
 
+/* BLOQUE DE MAPA RE-ESTILIZADO A BOTÓN INDESTRUCTIBLE */
+.contenedor-mapa-seguro {
+text-align: center;
+padding: 40px 20px;
+background: #eaeaea;
+border-radius: 15px;
+margin-top: 40px;
+}
+
+.contenedor-mapa-seguro p {
+font-size: 20px;
+margin-bottom: 20px;
+font-weight: bold;
+}
+
 .contacto{
 background:white;
 padding:60px;
@@ -256,76 +283,6 @@ box-shadow:0 5px 15px rgba(0,0,0,.2);
 z-index:1000;
 }
 
-/* MODAL DE PRECIOS */
-.modal-precios {
-display: none; 
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.75);
-z-index: 99999;
-justify-content: center;
-align-items: center;
-padding: 20px;
-}
-
-.modal-content {
-background: white;
-padding: 35px;
-border-radius: 20px;
-max-width: 600px;
-width: 100%;
-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-position: relative;
-}
-
-.close-btn {
-position: absolute;
-top: 10px;
-right: 20px;
-font-size: 40px;
-cursor: pointer;
-color: #333;
-font-weight: bold;
-line-height: 1;
-}
-
-.close-btn:hover { color: #ce1126; }
-
-.modal-content h3 {
-font-size: 30px;
-margin-bottom: 20px;
-color: #111;
-border-bottom: 4px solid #fcd116;
-padding-bottom: 10px;
-}
-
-.tabla-precios {
-width: 100%;
-border-collapse: collapse;
-margin-bottom: 25px;
-}
-
-.tabla-precios th, .tabla-precios td {
-text-align: left;
-padding: 12px 15px;
-font-size: 18px;
-border-bottom: 1px solid #ddd;
-}
-
-.tabla-precios th {
-background: #f5f5f5;
-font-weight: bold;
-}
-
-.tabla-precios td.precio-negrita {
-font-weight: bold;
-color: #111;
-text-align: right;
-}
-
 @media(max-width: 768px) {
 header {
 padding: 15px 20px;
@@ -341,9 +298,6 @@ font-size: 16px;
 .hero h1 { font-size: 38px; }
 .hero h2 { font-size: 24px; }
 .section-title { font-size: 36px; }
-.modal-content { padding: 20px; }
-.modal-content h3 { font-size: 22px; }
-.tabla-precios th, .tabla-precios td { font-size: 15px; padding: 8px 10px; }
 }
 </style>
 </head>
@@ -382,86 +336,87 @@ SmartSide, siding, house wrap y mucho más.
 
 <h2 class="section-title" id="productos">Nuestros Productos</h2>
 
+<!-- CADA TARJETA AHORA REDIRIGE CON UN MENSAJE PERSONALIZADO A TU WHATSAPP -->
 <div class="grid">
-<div class="card" onclick="abrirPrecios('pickets')">
-<div class="badge-precio">Ver Precios 🔎</div>
+<a href="https://wa.me?text=Hola,%20quiero%20cotizar%20Pickets" target="_blank" class="card-link">
+<div class="card">
+<div class="badge-precio">Cotizar 💬</div>
 <img src="images/pickets.png">
 <h3>Pickets</h3>
 </div>
+</a>
 
-<div class="card" onclick="abrirPrecios('madera')">
-<div class="badge-precio">Ver Precios 🔎</div>
+<a href="https://wa.me?text=Hola,%20quiero%20cotizar%20Pressure%20Treated%20Lumber%20y%20Postes" target="_blank" class="card-link">
+<div class="card">
+<div class="badge-precio">Cotizar 💬</div>
 <img src="images/Madera tratada.png">
 <h3>Pressure Treated Lumber & Postes</h3>
 </div>
+</a>
 
-<div class="card" onclick="abrirPrecios('sheetrock')">
-<div class="badge-precio">Ver Precios 🔎</div>
+<a href="https://wa.me?text=Hola,%20quiero%20cotizar%20Sheetrock" target="_blank" class="card-link">
+<div class="card">
+<div class="badge-precio">Cotizar 💬</div>
 <img src="images/sheetrock.png">
 <h3>Sheetrock</h3>
 </div>
+</a>
 
-<div class="card" onclick="abrirPrecios('plywood')">
-<div class="badge-precio">Ver Precios 🔎</div>
+<a href="https://wa.me?text=Hola,%20quiero%20cotizar%20Plywood%20y%20OSB" target="_blank" class="card-link">
+<div class="card">
+<div class="badge-precio">Cotizar 💬</div>
 <img src="images/OSB playwood.png">
 <h3>Plywood & OSB</h3>
 </div>
+</a>
 
-<div class="card" onclick="abrirPrecios('shingles')">
-<div class="badge-precio">Ver Precios 🔎</div>
+<a href="https://wa.me?text=Hola,%20quiero%20cotizar%20Roofing%20Shingles" target="_blank" class="card-link">
+<div class="card">
+<div class="badge-precio">Cotizar 💬</div>
 <img src="images/Teja single.png">
 <h3>Roofing Shingles</h3>
 </div>
+</a>
 
-<div class="card" onclick="abrirPrecios('cemento')">
-<div class="badge-precio">Ver Precios 🔎</div>
+<a href="https://wa.me?text=Hola,%20quiero%20cotizar%20Cement%20y%20Concrete" target="_blank" class="card-link">
+<div class="card">
+<div class="badge-precio">Cotizar 💬</div>
 <img src="images/cemento chtgpt.png">
 <h3>Cement & Concrete</h3>
 </div>
+</a>
 
-<div class="card" onclick="abrirPrecios('ventilacion')">
-<div class="badge-precio">Ver Precios 🔎</div>
+<a href="https://wa.me?text=Hola,%20quiero%20cotizar%20House%20Wrap%20y%20Ventilation" target="_blank" class="card-link">
+<div class="card">
+<div class="badge-precio">Cotizar 💬</div>
 <img src="images/exterior.png">
 <h3>House Wrap & Ventilation</h3>
 </div>
+</a>
 
-<div class="card" onclick="abrirPrecios('smartside')">
-<div class="badge-precio">Ver Precios 🔎</div>
+<a href="https://wa.me?text=Hola,%20quiero%20cotizar%20SmartSide" target="_blank" class="card-link">
+<div class="card">
+<div class="badge-precio">Cotizar 💬</div>
 <img src="images/smartside.png">
 <h3>SmartSide</h3>
 </div>
+</a>
 
-<div class="card" onclick="abrirPrecios('ferreteria')">
-<div class="badge-precio">Ver Precios 🔎</div>
+<a href="https://wa.me?text=Hola,%20quiero%20cotizar%20Nails,%20Screws%20y%20Herramientas" target="_blank" class="card-link">
+<div class="card">
+<div class="badge-precio">Cotizar 💬</div>
 <img src="images/clavos y tornillos.png">
 <h3>Nails, Screws & Tools</h3>
 </div>
+</a>
 
-<div class="card" onclick="abrirPrecios('siding')">
-<div class="badge-precio">Ver Precios 🔎</div>
+<a href="https://wa.me?text=Hola,%20quiero%20cotizar%20Siding%20y%20Stucco" target="_blank" class="card-link">
+<div class="card">
+<div class="badge-precio">Cotizar 💬</div>
 <img src="images/siding.png">
 <h3>Siding & Stucco</h3>
 </div>
-</div>
-
-<div id="modalPrecios" class="modal-precios">
-<div class="modal-content">
-<span class="close-btn" onclick="cerrarPrecios()">&times;</span>
-<h3 id="modalTitulo">Producto</h3>
-<table class="tabla-precios">
-<thead>
-<tr>
-<th>Medida / Descripción</th>
-<th style="text-align: right;">Precio</th>
-</tr>
-</thead>
-<tbody id="modalCuerpoTabla">
-</tbody>
-</table>
-<a href="https://wa.me" target="_blank" class="btn btn-verde" style="display:block; text-align:center; margin:0;">
-Preguntar por WhatsApp
 </a>
-</div>
 </div>
 
 <section class="calculadora" id="calculadora">
@@ -470,16 +425,13 @@ Preguntar por WhatsApp
 <input type="number" id="pies" placeholder="Ejemplo: 100">
 <button onclick="calcular()">Calcular Materiales</button>
 <div id="resultado"></div>
-<div style="margin-top:40px;">
 
-<!-- MAPA EMBED ABIERTO TOTALMENTE SEGURO SIN CONDICIONES -->
-<iframe 
-width="100%" 
-height="450" 
-style="border:0;border-radius:15px;"
-src="https://google.com">
-</iframe>
-
+<!-- BOTÓN DEFECTO MAPA INDESTRUCTIBLE -->
+<div class="contenedor-mapa-seguro">
+<p>📍 ¿Cómo llegar a nuestra ubicación en Houston?</p>
+<a href="https://goo.gl" target="_blank" class="btn btn-rojo">
+🗺️ Abrir en Google Maps
+</a>
 </div>
 </section>
 
@@ -495,22 +447,16 @@ src="https://google.com">
 <a class="whatsapp" href="https://wa.me" target="_blank">WhatsApp</a>
 
 <script>
-const preciosProductos = {
-pickets: {
-titulo: "Pickets para Cercas",
-items: [
-{ desc: "Pickets 6 ft", precio: "$2.00" },
-{ desc: "Pickets 8 ft", precio: "$3.50" }
-]
-},
-madera: {
-titulo: "Pressure Treated Lumber & Postes",
-items: [
-{ desc: "Postes TRT 4x4x8", precio: "$10.00" },
-{ desc: "Postes TRT 4x4x10", precio: "$16.50" },
-{ desc: "TRT 2x4x16", precio: "$13.00" },
-{ desc: "TRT 2x12x16", precio: "$42.00" },
-{ desc: "TRT 2x6x16", precio: "$17.00" },
-{ desc: "TRT 2x4x8", precio: "$4.50" },
-{ desc: "TRT 2x6x12", precio: "$13.00" },
-{ desc: "TRT 2x12x20", precio: "$75.00" },
+function calcular(){
+let pies = parseFloat(document.getElementById("pies").value);
+if(!pies){ return; }
+let postes = Math.ceil(pies/8)+1;
+let pickets = Math.ceil(pies*1.83);
+let rieles = Math.ceil((pies/8)*3);
+
+document.getElementById("resultado").innerHTML=
+"<b>Material estimado:</b><br><br>Postes: " + postes + "<br>Pickets: " + pickets + "<br>2x4 Rails: " + rieles;
+}
+</script>
+</body>
+</html>
