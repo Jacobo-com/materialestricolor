@@ -31,7 +31,6 @@ top:0;
 z-index:999;
 }
 
-/* DISEÑO DEL LOGO EN TEXTO COMPLETO Y TOTALMENTE VISIBLE */
 .logo-texto {
 text-decoration: none;
 font-size: 28px;
@@ -131,6 +130,14 @@ background:white;
 border-radius:15px;
 overflow:hidden;
 box-shadow:0 5px 15px rgba(0,0,0,.1);
+cursor: pointer;
+transition: transform 0.2s, box-shadow 0.2s;
+position: relative;
+}
+
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .card img{
@@ -142,7 +149,22 @@ object-fit:cover;
 .card h3{
 padding:20px;
 text-align:center;
-font-size:30px;
+font-size:26px;
+background: white;
+}
+
+/* ETIQUETA LLAMATIVA DE PRECIO */
+.badge-precio {
+position: absolute;
+top: 15px;
+right: 15px;
+background: #111;
+color: white;
+padding: 8px 15px;
+border-radius: 30px;
+font-size: 14px;
+font-weight: bold;
+box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .calculadora{
@@ -228,6 +250,81 @@ box-shadow:0 5px 15px rgba(0,0,0,.2);
 z-index:1000;
 }
 
+/* VENTANA MODAL FLOTANTE PARA PRECIOS */
+.modal-precios {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.6);
+z-index: 2000;
+justify-content: center;
+align-items: center;
+padding: 20px;
+}
+
+.modal-content {
+background: white;
+padding: 35px;
+border-radius: 20px;
+max-width: 600px;
+width: 100%;
+box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+position: relative;
+animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(-20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+position: absolute;
+top: 15px;
+right: 20px;
+font-size: 35px;
+cursor: pointer;
+color: #666;
+line-height: 1;
+}
+
+.close-btn:hover { color: #111; }
+
+.modal-content h3 {
+font-size: 32px;
+margin-bottom: 20px;
+color: #111;
+border-bottom: 3px solid #fcd116;
+padding-bottom: 10px;
+}
+
+.tabla-precios {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 25px;
+}
+
+.tabla-precios th, .tabla-precios td {
+text-align: left;
+padding: 12px 15px;
+font-size: 18px;
+border-bottom: 1px solid #ddd;
+}
+
+.tabla-precios th {
+background: #f5f5f5;
+font-weight: bold;
+}
+
+.tabla-precios td.precio-negrita {
+font-weight: bold;
+color: #111;
+text-align: right;
+}
+
 /* Adaptación para celulares */
 @media(max-width: 768px) {
 header {
@@ -246,6 +343,9 @@ font-size: 24px;
 .hero h1 { font-size: 38px; }
 .hero h2 { font-size: 24px; }
 .section-title { font-size: 36px; }
+.modal-content { padding: 20px; }
+.modal-content h3 { font-size: 24px; }
+.tabla-precios th, .tabla-precios td { font-size: 15px; padding: 8px 10px; }
 }
 
 </style>
@@ -255,7 +355,6 @@ font-size: 24px;
 
 <header>
 
-<!-- Reemplazo de imagen por texto estilizado e indestructible -->
 <a href="#" class="logo-texto">
 Materiales<span class="tricolor">Tricolor</span>
 </a>
@@ -307,56 +406,89 @@ Nuestros Productos
 
 <div class="grid">
 
-<div class="card">
+<!-- PRODUCTOS CON ENLACE DINÁMICO A SUS PRECIOS -->
+<div class="card" onclick="abrirPrecios('pickets')">
+<div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/pickets.png">
 <h3>Pickets</h3>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirPrecios('madera')">
+<div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/Madera tratada.png">
-<h3>Pressure Treated Lumber</h3>
+<h3>Pressure Treated Lumber & Postes</h3>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirPrecios('sheetrock')">
+<div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/sheetrock.png">
 <h3>Sheetrock</h3>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirPrecios('plywood')">
+<div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/OSB playwood.png">
 <h3>Plywood & OSB</h3>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirPrecios('shingles')">
+<div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/Teja single.png">
 <h3>Roofing Shingles</h3>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirPrecios('cemento')">
+<div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/cemento chtgpt.png">
 <h3>Cement & Concrete</h3>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirPrecios('ventilacion')">
+<div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/exterior.png">
 <h3>House Wrap & Ventilation</h3>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirPrecios('smartside')">
+<div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/smartside.png">
 <h3>SmartSide</h3>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirPrecios('ferreteria')">
+<div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/clavos y tornillos.png">
-<h3>Nails & Screws</h3>
+<h3>Nails, Screws & Tools</h3>
 </div>
 
-<div class="card">
+<div class="card" onclick="abrirPrecios('siding')">
+<div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/siding.png">
-<h3>Siding</h3>
+<h3>Siding & Stucco</h3>
 </div>
 
+</div>
+
+<!-- ESTRUCTURA DE LA VENTANA EMERGENTE (MODAL) -->
+<div id="modalPrecios" class="modal-precios" onclick="cerrarModalExterno(event)">
+<div class="modal-content">
+<span class="close-btn" onclick="cerrarPrecios()">&times;</span>
+<h3 id="modalTitulo">Producto</h3>
+<table class="tabla-precios">
+<thead>
+<tr>
+<th>Medida / Descripción</th>
+<th style="text-align: right;">Precio</th>
+</tr>
+</thead>
+<tbody id="modalCuerpoTabla">
+<!-- Se rellena automáticamente con Javascript -->
+</tbody>
+</table>
+<a href="https://wa.me" target="_blank" class="btn btn-verde" style="display:block; text-align:center; margin:0;">
+Preguntar por WhatsApp
+</a>
+</div>
 </div>
 
 <section class="calculadora" id="calculadora">
@@ -381,12 +513,15 @@ Calcular Materiales
 <div id="resultado"></div>
 <div style="margin-top:40px;">
 
-<iframe
-src="https://google.com"
-width="100%"
-height="450"
-style="border:0;border-radius:15px;"
-loading="lazy">
+<!-- MAPA ENLAZADO CORRECTAMENTE -->
+<iframe 
+src="https://google.com" 
+width="100%" 
+height="450" 
+style="border:0;border-radius:15px;" 
+allowfullscreen="" 
+loading="lazy" 
+referrerpolicy="no-referrer-when-downgrade">
 </iframe>
 
 </div>
@@ -398,12 +533,12 @@ loading="lazy">
 
 <p>
 <strong>Teléfono:</strong>
-[+1 (346) 245-4940](tel:+13462454940)
+<a href="tel:+13462454940">(346) 245-4940</a>
 </p>
 
 <p>
 <strong>WhatsApp:</strong>
-[+1 (832) 525-2961](tel:+18325252961)
+<a href="tel:+18325252961">(832) 525-2961</a>
 </p>
 
 <p>
@@ -429,40 +564,15 @@ WhatsApp
 
 <script>
 
-function calcular(){
-
-let pies =
-parseFloat(
-document.getElementById("pies").value
-);
-
-if(!pies){
-return;
-}
-
-let postes =
-Math.ceil(pies/8)+1;
-
-let pickets =
-Math.ceil(pies*1.83);
-
-let rieles =
-Math.ceil((pies/8)*3);
-
-document.getElementById("resultado").innerHTML=
-`
-<b>Material estimado:</b><br><br>
-
-Postes: ${postes}<br>
-
-Pickets: ${pickets}<br>
-
-2x4 Rails: ${rieles}
-`;
-
-}
-
-</script>
-
-</body>
-</html>
+// BASE DE DATOS ESTRUCTURADA DESDE TU GOOGLE SHEETS
+const preciosProductos = {
+pickets: {
+titulo: "Pickets para Cercas",
+items: [
+{ desc: "Pickets 6 ft", precio: "$2.00" },
+{ desc: "Pickets 8 ft", precio: "$3.50" }
+]
+},
+madera: {
+titulo: "Pressure Treated Lumber & Postes",
+items: [
