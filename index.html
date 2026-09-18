@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Materiales Tricolor</title>
 
 <style>
@@ -12,195 +11,193 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
 background:#f5f5f5;
 color:#333;
 }
 
 header{
-background:#1f1f1f;
-color:white;
-padding:20px;
-}
-
-.topbar{
-max-width:1200px;
-margin:auto;
+background:#111;
+padding:20px 50px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+position:sticky;
+top:0;
+z-index:999;
 }
 
 .logo{
-font-size:32px;
+color:white;
+font-size:38px;
 font-weight:bold;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-left:20px;
+margin-left:25px;
+font-size:18px;
 font-weight:bold;
+}
+
+.banner img{
+width:100%;
+height:700px;
+object-fit:cover;
+display:block;
 }
 
 .hero{
 background:white;
-padding:80px 20px;
+padding:70px 20px;
 text-align:center;
 }
 
 .hero h1{
-font-size:52px;
-margin-bottom:15px;
+font-size:60px;
+margin-bottom:20px;
 }
 
 .hero h2{
-font-size:28px;
-margin-bottom:20px;
+font-size:34px;
 color:#555;
+margin-bottom:30px;
 }
 
 .hero p{
-font-size:20px;
-max-width:900px;
+max-width:1000px;
 margin:auto;
-line-height:1.7;
+font-size:22px;
+line-height:1.8;
 }
 
-.buttons{
-margin-top:30px;
+.botones{
+margin-top:40px;
 }
 
 .btn{
 display:inline-block;
-padding:15px 25px;
+padding:18px 35px;
 margin:10px;
-border-radius:8px;
+border-radius:10px;
 text-decoration:none;
+font-size:20px;
 font-weight:bold;
 }
 
-.btn-primary{
-background:#222;
+.btn-negro{
+background:#111;
 color:white;
 }
 
-.btn-secondary{
+.btn-verde{
 background:#25D366;
 color:white;
 }
 
 .section-title{
 text-align:center;
-font-size:40px;
-margin-top:60px;
-margin-bottom:30px;
+font-size:55px;
+margin:70px 0 40px;
 }
 
-.products{
-max-width:1300px;
-margin:auto;
-padding:20px;
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
+padding:0 40px 60px;
 }
 
 .card{
 background:white;
 border-radius:15px;
 overflow:hidden;
-box-shadow:0 3px 15px rgba(0,0,0,.12);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
+box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
 
 .card img{
 width:100%;
-height:220px;
+height:260px;
 object-fit:cover;
 }
 
 .card h3{
 padding:20px;
 text-align:center;
+font-size:30px;
+}
+
+.calculadora{
+max-width:900px;
+margin:70px auto;
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.calculadora h2{
+text-align:center;
+font-size:40px;
+margin-bottom:30px;
+}
+
+.calculadora label{
 font-size:22px;
 }
 
-.about{
-max-width:1200px;
-margin:70px auto;
-padding:40px;
-background:white;
-border-radius:15px;
-}
-
-.about h2{
-margin-bottom:20px;
-font-size:36px;
-}
-
-.about p{
-line-height:1.8;
-font-size:18px;
-}
-
-.calculator{
-max-width:900px;
-margin:70px auto;
-padding:40px;
-background:white;
-border-radius:15px;
-box-shadow:0 3px 15px rgba(0,0,0,.1);
-}
-
-.calculator h2{
-text-align:center;
-margin-bottom:25px;
-}
-
-.calculator input{
+.calculadora input{
 width:100%;
 padding:15px;
-font-size:18px;
+margin-top:10px;
+margin-bottom:20px;
+font-size:20px;
 }
 
-.calculator button{
-margin-top:20px;
-padding:15px 25px;
-background:#222;
+.calculadora button{
+background:#111;
 color:white;
+padding:15px 30px;
 border:none;
 border-radius:8px;
-font-size:18px;
+font-size:20px;
 cursor:pointer;
 }
 
-.contact{
-max-width:1200px;
-margin:70px auto;
-padding:40px;
-background:white;
-border-radius:15px;
-text-align:center;
+#resultado{
+margin-top:30px;
+font-size:24px;
+line-height:1.8;
 }
 
-.contact h2{
-margin-bottom:20px;
+.contacto{
+background:white;
+padding:60px;
+text-align:center;
+margin-top:50px;
+}
+
+.contacto h2{
+font-size:50px;
+margin-bottom:30px;
+}
+
+.contacto p{
+font-size:24px;
+margin:10px;
 }
 
 footer{
-background:#1f1f1f;
+background:#111;
 color:white;
 text-align:center;
-padding:30px;
-margin-top:60px;
+padding:25px;
+margin-top:50px;
 }
 
 .whatsapp{
@@ -209,31 +206,12 @@ right:20px;
 bottom:20px;
 background:#25D366;
 color:white;
-padding:18px 24px;
+padding:18px 30px;
 border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-box-shadow:0 3px 15px rgba(0,0,0,.3);
-}
-
-@media(max-width:768px){
-
-.topbar{
-flex-direction:column;
-}
-
-nav{
-margin-top:15px;
-}
-
-.hero h1{
-font-size:38px;
-}
-
-.hero h2{
 font-size:22px;
-}
-
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
 </style>
@@ -242,8 +220,6 @@ font-size:22px;
 <body>
 
 <header>
-
-<div class="topbar">
 
 <div class="logo">
 Materiales Tricolor
@@ -255,17 +231,12 @@ Materiales Tricolor
 <a href="#contacto">Contacto</a>
 </nav>
 
-</div>
-
 </header>
-<section style="
-background:url('images/banner.jpg') center center/cover no-repeat;
-height:500px;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;">
+
+<section class="banner">
+<img src="images/banner materiales.png" alt="Materiales Tricolor">
 </section>
+
 <section class="hero">
 
 <h1>Building Materials For Every Project</h1>
@@ -273,26 +244,21 @@ text-align:center;">
 <h2>Materiales de Construcción Para Todo Proyecto</h2>
 
 <p>
-Serving contractors, builders and homeowners throughout Houston.
-At Materiales Tricolor you'll find lumber, sheetrock, plywood, roofing shingles,
-cement, rebar, siding, SmartSide, house wrap and more.
-
-<br><br>
-
-Sirviendo a contratistas, constructores y propietarios en Houston.
-En Materiales Tricolor encontrarás madera, sheetrock, plywood, shingles,
-cemento, varilla, siding, SmartSide, house wrap y mucho más.
+Servimos contratistas, constructores y propietarios en Houston.
+Encuentra madera tratada, pickets, plywood, OSB, sheetrock,
+shingles TAMKO, Atlas y Timberline, cemento, varilla,
+SmartSide, siding, house wrap y mucho más.
 </p>
 
-<div class="buttons">
+<div class="botones">
 
-<a class="btn btn-primary" href="#productos">
+<a href="#productos" class="btn btn-negro">
 Ver Productos
 </a>
 
-<a class="btn btn-secondary"
-href="https://wa.me/18325252961?text=Hola,%20quiero%20una%20cotización%20de%20Materiales%20Tricolor"
-target="_blank">
+<a href="https://wa.me/18325252961"
+target="_blank"
+class="btn btn-verde">
 Solicitar Cotización
 </a>
 
@@ -300,11 +266,11 @@ Solicitar Cotización
 
 </section>
 
-<h2 id="productos" class="section-title">
+<h2 class="section-title" id="productos">
 Nuestros Productos
 </h2>
 
-<section class="products">
+<div class="grid">
 
 <div class="card">
 <img src="images/pickets.png">
@@ -333,7 +299,7 @@ Nuestros Productos
 
 <div class="card">
 <img src="images/cemento chtgpt.png">
-<h3>Cement & Concrete Products</h3>
+<h3>Cement & Concrete</h3>
 </div>
 
 <div class="card">
@@ -356,104 +322,97 @@ Nuestros Productos
 <h3>Siding</h3>
 </div>
 
-</section>
+</div>
 
-<section id="calculadora" class="calculator">
+<section class="calculadora" id="calculadora">
 
-<h2>Fence Calculator / Calculadora de Cercas</h2>
+<h2>
+Calculadora de Cercas
+</h2>
 
-<p>Longitud de la cerca (pies)</p>
-
-<br>
+<label>
+Longitud de la cerca (pies)
+</label>
 
 <input
 type="number"
-id="fenceLength"
+id="pies"
 placeholder="Ejemplo: 100">
 
-<button onclick="calculateFence()">
+<button onclick="calcular()">
 Calcular Materiales
 </button>
 
-<br><br>
-
-<div id="fenceResult"></div>
+<div id="resultado"></div>
 
 </section>
 
-<section id="contacto" class="contact">
+<section class="contacto" id="contacto">
 
 <h2>Contacto</h2>
 
-<p><strong>Teléfono:</strong> (346) 245-4940</p>
+<p>
+<strong>Teléfono:</strong>
+(346) 245-4940
+</p>
 
-<br>
+<p>
+<strong>WhatsApp:</strong>
+(832) 525-2961
+</p>
 
-<p><strong>WhatsApp:</strong> (832) 525-2961</p>
-
-<br>
-
-<p><strong>Dirección:</strong><br>
+<p>
+<strong>Dirección:</strong><br>
 13601 Bridgeport Rd<br>
-Houston, TX 77047
+Houston TX 77047
 </p>
 
 </section>
 
 <footer>
 
-<p>
-© Materiales Tricolor
-</p>
+Materiales Tricolor © 2025
 
 </footer>
 
 <a
 class="whatsapp"
-href="https://wa.me/18325252961?text=Hola,%20quiero%20una%20cotización%20de%20Materiales%20Tricolor"
+href="https://wa.me/18325252961"
 target="_blank">
-💬 WhatsApp
+WhatsApp
 </a>
 
 <script>
 
-function calculateFence(){
+function calcular(){
 
-let length =
-parseFloat(document.getElementById('fenceLength').value);
+let pies =
+parseFloat(
+document.getElementById("pies").value
+);
 
-if(isNaN(length) || length <= 0){
-
-document.getElementById('fenceResult').innerHTML =
-"<p>Ingrese una medida válida.</p>";
-
+if(!pies){
 return;
-
 }
 
-let pickets = Math.ceil(length * 1.83);
+let postes =
+Math.ceil(pies/8)+1;
 
-let posts = Math.ceil(length / 8) + 1;
+let pickets =
+Math.ceil(pies*1.83);
 
-let rails = Math.ceil((length / 8) * 3);
+let rieles =
+Math.ceil((pies/8)*3);
 
-let screws = pickets * 6;
-
-document.getElementById('fenceResult').innerHTML =
-
+document.getElementById("resultado").innerHTML=
 `
-<h3>Materiales Aproximados</h3>
+<b>Material estimado:</b><br><br>
 
-<p>✅ Pickets: <strong>${pickets}</strong></p>
+Postes: ${postes}<br>
 
-<p>✅ Postes TRT: <strong>${posts}</strong></p>
+Pickets: ${pickets}<br>
 
-<p>✅ 2x4 Horizontales: <strong>${rails}</strong></p>
-
-<p>✅ Tornillos: <strong>${screws}</strong></p>
-
-<p><strong>*Estimación para una cerca residencial estándar de 6 pies de altura.</strong></p>
-
+2x4 Rails: ${rieles}
 `;
 
 }
