@@ -31,6 +31,7 @@ top:0;
 z-index:999;
 }
 
+/* LOGO CORREGIDO: AMARILLO, AZUL Y ROJO */
 .logo-texto {
 text-decoration: none;
 font-size: 28px;
@@ -42,7 +43,7 @@ align-items: center;
 }
 
 .logo-texto .tricolor {
-background: linear-gradient(to right, #0038a8 33%, #fcd116 33% 66%, #ce1126 66%);
+background: linear-gradient(to right, #fcd116 33%, #0038a8 33% 66%, #ce1126 66%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 margin-left: 5px;
@@ -153,7 +154,6 @@ font-size:26px;
 background: white;
 }
 
-/* ETIQUETA LLAMATIVA DE PRECIO */
 .badge-precio {
 position: absolute;
 top: 15px;
@@ -165,6 +165,7 @@ border-radius: 30px;
 font-size: 14px;
 font-weight: bold;
 box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+pointer-events: none; 
 }
 
 .calculadora{
@@ -250,54 +251,49 @@ box-shadow:0 5px 15px rgba(0,0,0,.2);
 z-index:1000;
 }
 
-/* VENTANA MODAL FLOTANTE PARA PRECIOS */
+/* MODAL REDISEÑADO CON VISIBILIDAD ASEGURADA */
 .modal-precios {
-display: none;
+display: none; 
 position: fixed;
 top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background: rgba(0,0,0,0.6);
-z-index: 2000;
+background: rgba(0,0,0,0.7) !important;
+z-index: 99999 !important;
 justify-content: center;
 align-items: center;
 padding: 20px;
 }
 
 .modal-content {
-background: white;
+background: white !important;
 padding: 35px;
 border-radius: 20px;
 max-width: 600px;
 width: 100%;
 box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 position: relative;
-animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-from { opacity: 0; transform: translateY(-20px); }
-to { opacity: 1; transform: translateY(0); }
 }
 
 .close-btn {
 position: absolute;
-top: 15px;
+top: 10px;
 right: 20px;
-font-size: 35px;
+font-size: 40px;
 cursor: pointer;
-color: #666;
+color: #333;
+font-weight: bold;
 line-height: 1;
 }
 
-.close-btn:hover { color: #111; }
+.close-btn:hover { color: #ce1126; }
 
 .modal-content h3 {
-font-size: 32px;
+font-size: 30px;
 margin-bottom: 20px;
 color: #111;
-border-bottom: 3px solid #fcd116;
+border-bottom: 4px solid #fcd116;
 padding-bottom: 10px;
 }
 
@@ -325,7 +321,6 @@ color: #111;
 text-align: right;
 }
 
-/* Adaptación para celulares */
 @media(max-width: 768px) {
 header {
 padding: 15px 20px;
@@ -337,14 +332,12 @@ nav a {
 margin: 0 10px;
 font-size: 16px;
 }
-.logo-texto {
-font-size: 24px;
-}
+.logo-texto { font-size: 24px; }
 .hero h1 { font-size: 38px; }
 .hero h2 { font-size: 24px; }
 .section-title { font-size: 36px; }
 .modal-content { padding: 20px; }
-.modal-content h3 { font-size: 24px; }
+.modal-content h3 { font-size: 22px; }
 .tabla-precios th, .tabla-precios td { font-size: 15px; padding: 8px 10px; }
 }
 
@@ -406,7 +399,6 @@ Nuestros Productos
 
 <div class="grid">
 
-<!-- PRODUCTOS CON ENLACE DINÁMICO A SUS PRECIOS -->
 <div class="card" onclick="abrirPrecios('pickets')">
 <div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/pickets.png">
@@ -469,8 +461,8 @@ Nuestros Productos
 
 </div>
 
-<!-- ESTRUCTURA DE LA VENTANA EMERGENTE (MODAL) -->
-<div id="modalPrecios" class="modal-precios" onclick="cerrarModalExterno(event)">
+<!-- VENTANA MODAL CORREGIDA -->
+<div id="modalPrecios" class="modal-precios">
 <div class="modal-content">
 <span class="close-btn" onclick="cerrarPrecios()">&times;</span>
 <h3 id="modalTitulo">Producto</h3>
@@ -482,7 +474,6 @@ Nuestros Productos
 </tr>
 </thead>
 <tbody id="modalCuerpoTabla">
-<!-- Se rellena automáticamente con Javascript -->
 </tbody>
 </table>
 <a href="https://wa.me" target="_blank" class="btn btn-verde" style="display:block; text-align:center; margin:0;">
@@ -513,7 +504,6 @@ Calcular Materiales
 <div id="resultado"></div>
 <div style="margin-top:40px;">
 
-<!-- MAPA ENLAZADO CORRECTAMENTE -->
 <iframe 
 src="https://google.com" 
 width="100%" 
@@ -564,7 +554,6 @@ WhatsApp
 
 <script>
 
-// BASE DE DATOS ESTRUCTURADA DESDE TU GOOGLE SHEETS
 const preciosProductos = {
 pickets: {
 titulo: "Pickets para Cercas",
@@ -576,3 +565,11 @@ items: [
 madera: {
 titulo: "Pressure Treated Lumber & Postes",
 items: [
+{ desc: "Postes TRT 4x4x8", precio: "$10.00" },
+{ desc: "Postes TRT 4x4x10", precio: "$16.50" },
+{ desc: "TRT 2x4x16", precio: "$13.00" },
+{ desc: "TRT 2x12x16", precio: "$42.00" },
+{ desc: "TRT 2x6x16", precio: "$17.00" },
+{ desc: "TRT 2x4x8", precio: "$4.50" },
+{ desc: "TRT 2x6x12", precio: "$13.00" },
+{ desc: "TRT 2x12x20", precio: "$75.00" },
