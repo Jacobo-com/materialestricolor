@@ -131,7 +131,6 @@ background:white;
 border-radius:15px;
 overflow:hidden;
 box-shadow:0 5px 15px rgba(0,0,0,.1);
-cursor: pointer;
 transition: transform 0.2s, box-shadow 0.2s;
 position: relative;
 }
@@ -139,6 +138,17 @@ position: relative;
 .card:hover {
 transform: translateY(-5px);
 box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* ENLACE INVISIBLE COMPLETO SOBRE LA TARJETA */
+.card-link {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 10;
+cursor: pointer;
 }
 
 .card img{
@@ -165,7 +175,7 @@ border-radius: 30px;
 font-size: 14px;
 font-weight: bold;
 box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-pointer-events: none; 
+z-index: 5;
 }
 
 .calculadora{
@@ -251,7 +261,7 @@ box-shadow:0 5px 15px rgba(0,0,0,.2);
 z-index:1000;
 }
 
-/* MODAL REDISEÑADO CON VISIBILIDAD ASEGURADA */
+/* MODAL DE PRECIOS ULTRA REFORZADO */
 .modal-precios {
 display: none; 
 position: fixed;
@@ -259,8 +269,8 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background: rgba(0,0,0,0.7) !important;
-z-index: 99999 !important;
+background: rgba(0,0,0,0.75) !important;
+z-index: 999999 !important;
 justify-content: center;
 align-items: center;
 padding: 20px;
@@ -274,6 +284,7 @@ max-width: 600px;
 width: 100%;
 box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 position: relative;
+z-index: 1000000 !important;
 }
 
 .close-btn {
@@ -285,6 +296,7 @@ cursor: pointer;
 color: #333;
 font-weight: bold;
 line-height: 1;
+z-index: 1000005 !important;
 }
 
 .close-btn:hover { color: #ce1126; }
@@ -399,61 +411,71 @@ Nuestros Productos
 
 <div class="grid">
 
-<div class="card" onclick="abrirPrecios('pickets')">
+<div class="card">
+<div class="card-link" onclick="abrirPrecios('pickets')"></div>
 <div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/pickets.png">
 <h3>Pickets</h3>
 </div>
 
-<div class="card" onclick="abrirPrecios('madera')">
+<div class="card">
+<div class="card-link" onclick="abrirPrecios('madera')"></div>
 <div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/Madera tratada.png">
 <h3>Pressure Treated Lumber & Postes</h3>
 </div>
 
-<div class="card" onclick="abrirPrecios('sheetrock')">
+<div class="card">
+<div class="card-link" onclick="abrirPrecios('sheetrock')"></div>
 <div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/sheetrock.png">
 <h3>Sheetrock</h3>
 </div>
 
-<div class="card" onclick="abrirPrecios('plywood')">
+<div class="card">
+<div class="card-link" onclick="abrirPrecios('plywood')"></div>
 <div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/OSB playwood.png">
 <h3>Plywood & OSB</h3>
 </div>
 
-<div class="card" onclick="abrirPrecios('shingles')">
+<div class="card">
+<div class="card-link" onclick="abrirPrecios('shingles')"></div>
 <div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/Teja single.png">
 <h3>Roofing Shingles</h3>
 </div>
 
-<div class="card" onclick="abrirPrecios('cemento')">
+<div class="card">
+<div class="card-link" onclick="abrirPrecios('cemento')"></div>
 <div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/cemento chtgpt.png">
 <h3>Cement & Concrete</h3>
 </div>
 
-<div class="card" onclick="abrirPrecios('ventilacion')">
+<div class="card">
+<div class="card-link" onclick="abrirPrecios('ventilacion')"></div>
 <div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/exterior.png">
 <h3>House Wrap & Ventilation</h3>
 </div>
 
-<div class="card" onclick="abrirPrecios('smartside')">
+<div class="card">
+<div class="card-link" onclick="abrirPrecios('smartside')"></div>
 <div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/smartside.png">
 <h3>SmartSide</h3>
 </div>
 
-<div class="card" onclick="abrirPrecios('ferreteria')">
+<div class="card">
+<div class="card-link" onclick="abrirPrecios('ferreteria')"></div>
 <div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/clavos y tornillos.png">
 <h3>Nails, Screws & Tools</h3>
 </div>
 
-<div class="card" onclick="abrirPrecios('siding')">
+<div class="card">
+<div class="card-link" onclick="abrirPrecios('siding')"></div>
 <div class="badge-precio">Ver Precios 🔎</div>
 <img src="images/siding.png">
 <h3>Siding & Stucco</h3>
@@ -461,7 +483,7 @@ Nuestros Productos
 
 </div>
 
-<!-- VENTANA MODAL CORREGIDA -->
+<!-- VENTANA MODAL FLOTANTE SEGURA -->
 <div id="modalPrecios" class="modal-precios">
 <div class="modal-content">
 <span class="close-btn" onclick="cerrarPrecios()">&times;</span>
@@ -476,7 +498,7 @@ Nuestros Productos
 <tbody id="modalCuerpoTabla">
 </tbody>
 </table>
-<a href="https://wa.me" target="_blank" class="btn btn-verde" style="display:block; text-align:center; margin:0;">
+<a href="https://wa.me" target="_blank" class="btn btn-verde" style="display:block; text-align:center; margin:0; position: relative; z-index: 1000010;">
 Preguntar por WhatsApp
 </a>
 </div>
@@ -504,14 +526,14 @@ Calcular Materiales
 <div id="resultado"></div>
 <div style="margin-top:40px;">
 
+<!-- MAPA RE-ENLAZADO Y CODIFICADO SIN ESPACIOS PROHIBIDOS -->
 <iframe 
 src="https://google.com" 
 width="100%" 
 height="450" 
 style="border:0;border-radius:15px;" 
 allowfullscreen="" 
-loading="lazy" 
-referrerpolicy="no-referrer-when-downgrade">
+loading="lazy">
 </iframe>
 
 </div>
@@ -557,19 +579,3 @@ WhatsApp
 const preciosProductos = {
 pickets: {
 titulo: "Pickets para Cercas",
-items: [
-{ desc: "Pickets 6 ft", precio: "$2.00" },
-{ desc: "Pickets 8 ft", precio: "$3.50" }
-]
-},
-madera: {
-titulo: "Pressure Treated Lumber & Postes",
-items: [
-{ desc: "Postes TRT 4x4x8", precio: "$10.00" },
-{ desc: "Postes TRT 4x4x10", precio: "$16.50" },
-{ desc: "TRT 2x4x16", precio: "$13.00" },
-{ desc: "TRT 2x12x16", precio: "$42.00" },
-{ desc: "TRT 2x6x16", precio: "$17.00" },
-{ desc: "TRT 2x4x8", precio: "$4.50" },
-{ desc: "TRT 2x6x12", precio: "$13.00" },
-{ desc: "TRT 2x12x20", precio: "$75.00" },
