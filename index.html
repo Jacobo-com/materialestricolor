@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Materiales Tricolor</title>
 
+<!-- Cargamos los íconos oficiales para que el logo de WhatsApp aparezca perfectamente -->
+<link rel="stylesheet" href="https://cloudflare.com">
+
 <style>
 *{
 margin:0;
@@ -266,20 +269,30 @@ padding:25px;
 margin-top:50px;
 }
 
-/* BOTÓN FLOTANTE DE WHATSAPP MEJORADO */
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:white;
-padding:18px 30px;
-border-radius:50px;
-font-size:22px;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,.2);
-z-index:1000;
+/* BOTÓN FLOTANTE REDONDO CON ICONO DE WHATSAPP */
+.whatsapp-flotante {
+position: fixed;
+width: 60px;
+height: 60px;
+bottom: 20px;
+right: 20px;
+background-color: #25d366;
+color: #FFF;
+border-radius: 50px;
+text-align: center;
+font-size: 35px;
+box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+z-index: 1000;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+transition: transform 0.3s;
+}
+
+.whatsapp-flotante:hover {
+transform: scale(1.1);
+background-color: #20ba5a;
 }
 
 @media(max-width: 768px) {
@@ -297,6 +310,7 @@ font-size: 16px;
 .hero h1 { font-size: 38px; }
 .hero h2 { font-size: 24px; }
 .section-title { font-size: 36px; }
+.whatsapp-flotante { width: 55px; height: 55px; font-size: 30px; bottom: 15px; right: 15px; }
 }
 </style>
 </head>
@@ -329,7 +343,6 @@ SmartSide, siding, house wrap y mucho más.
 </p>
 <div class="botones">
 <a href="#productos" class="btn btn-negro">Ver Productos</a>
-<!-- BOTÓN PRINCIPAL DE COTIZACIÓN CORREGIDO -->
 <a href="https://whatsapp.com" target="_blank" class="btn btn-verde">Solicitar Cotización</a>
 </div>
 </section>
@@ -337,7 +350,6 @@ SmartSide, siding, house wrap y mucho más.
 <h2 class="section-title" id="productos">Nuestros Productos</h2>
 
 <div class="grid">
-<!-- CADA PRODUCTO TIENE LA NUEVA API CORREGIDA CON EL MENSAJE DE BIENVENIDA -->
 <a href="https://whatsapp.com" target="_blank" class="card-link">
 <div class="card">
 <div class="badge-precio">Cotizar 💬</div>
@@ -437,10 +449,3 @@ SmartSide, siding, house wrap y mucho más.
 <section class="contacto" id="contacto">
 <h2>Contacto</h2>
 <p><strong>Teléfono:</strong> <a href="tel:+13462454940">(346) 245-4940</a></p>
-<!-- ENLACE DE TEXTO CONTACTO CORREGIDO -->
-<p><strong>WhatsApp:</strong> <a href="https://whatsapp.com" target="_blank">(832) 525-2961</a></p>
-<p><strong>Dirección:</strong><br>13601 Bridgeport Rd<br>Houston TX 77047</p>
-</section>
-
-<footer>Materiales Tricolor © 2026</footer>
-
