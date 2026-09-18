@@ -22,7 +22,7 @@ color:#333;
 
 header{
 background:#111;
-padding:20px 50px;
+padding:15px 50px;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -31,9 +31,13 @@ top:0;
 z-index:999;
 }
 
-.logo img{
-height:50px;
-display:block;
+/* AQUÍ SE HACE LA MAGIA PARA EL LOGO VISIBLE */
+.logo img {
+height: 65px; /* Aumentamos un poco el alto para mejor legibilidad */
+max-width: 100%;
+display: block;
+filter: brightness(0) invert(1); /* Convierte el logo oscuro a blanco puro automáticamente */
+object-fit: contain;
 }
 
 nav a{
@@ -211,6 +215,24 @@ font-size:22px;
 font-weight:bold;
 text-decoration:none;
 box-shadow:0 5px 15px rgba(0,0,0,.2);
+z-index:1000;
+}
+
+/* Optimización para que se vea excelente en teléfonos */
+@media(max-width: 768px) {
+header {
+padding: 15px 20px;
+flex-direction: column;
+gap: 15px;
+text-align: center;
+}
+nav a {
+margin: 0 10px;
+font-size: 16px;
+}
+.hero h1 { font-size: 38px; }
+.hero h2 { font-size: 24px; }
+.section-title { font-size: 36px; }
 }
 
 </style>
@@ -221,6 +243,7 @@ box-shadow:0 5px 15px rgba(0,0,0,.2);
 <header>
 
 <div class="logo">
+<!-- Asegúrate de que en tu carpeta el archivo se llame exactamente logo.png con minúsculas -->
 <img src="images/logo.png" alt="Materiales Tricolor">
 </div>
 
@@ -362,12 +385,12 @@ loading="lazy">
 
 <p>
 <strong>Teléfono:</strong>
-(346) 245-4940
+[+1 (346) 245-4940](tel:+13462454940)
 </p>
 
 <p>
 <strong>WhatsApp:</strong>
-(832) 525-2961
+[+1 (832) 525-2961](tel:+18325252961)
 </p>
 
 <p>
@@ -380,7 +403,7 @@ Houston TX 77047
 
 <footer>
 
-Materiales Tricolor © 2025
+Materiales Tricolor © 2026
 
 </footer>
 
