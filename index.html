@@ -22,7 +22,7 @@ color:#333;
 
 header{
 background:#111;
-padding:15px 50px;
+padding:20px 50px;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -31,13 +31,23 @@ top:0;
 z-index:999;
 }
 
-/* AQUÍ SE HACE LA MAGIA PARA EL LOGO VISIBLE */
-.logo img {
-height: 65px; /* Aumentamos un poco el alto para mejor legibilidad */
-max-width: 100%;
-display: block;
-filter: brightness(0) invert(1); /* Convierte el logo oscuro a blanco puro automáticamente */
-object-fit: contain;
+/* DISEÑO DEL LOGO EN TEXTO COMPLETO Y TOTALMENTE VISIBLE */
+.logo-texto {
+text-decoration: none;
+font-size: 28px;
+font-weight: 800;
+letter-spacing: 0.5px;
+color: white;
+display: flex;
+align-items: center;
+}
+
+.logo-texto .tricolor {
+background: linear-gradient(to right, #0038a8 33%, #fcd116 33% 66%, #ce1126 66%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-left: 5px;
+font-weight: 900;
 }
 
 nav a{
@@ -218,7 +228,7 @@ box-shadow:0 5px 15px rgba(0,0,0,.2);
 z-index:1000;
 }
 
-/* Optimización para que se vea excelente en teléfonos */
+/* Adaptación para celulares */
 @media(max-width: 768px) {
 header {
 padding: 15px 20px;
@@ -229,6 +239,9 @@ text-align: center;
 nav a {
 margin: 0 10px;
 font-size: 16px;
+}
+.logo-texto {
+font-size: 24px;
 }
 .hero h1 { font-size: 38px; }
 .hero h2 { font-size: 24px; }
@@ -242,10 +255,10 @@ font-size: 16px;
 
 <header>
 
-<div class="logo">
-<!-- Asegúrate de que en tu carpeta el archivo se llame exactamente logo.png con minúsculas -->
-<img src="images/logo.png" alt="Materiales Tricolor">
-</div>
+<!-- Reemplazo de imagen por texto estilizado e indestructible -->
+<a href="#" class="logo-texto">
+Materiales<span class="tricolor">Tricolor</span>
+</a>
 
 <nav>
 <a href="#productos">Productos</a>
@@ -278,7 +291,7 @@ SmartSide, siding, house wrap y mucho más.
 Ver Productos
 </a>
 
-<a href="https://wa.me/18325252961"
+<a href="https://wa.me"
 target="_blank"
 class="btn btn-verde">
 Solicitar Cotización
@@ -369,7 +382,7 @@ Calcular Materiales
 <div style="margin-top:40px;">
 
 <iframe
-src="https://maps.google.com/maps?q=13601%20Bridgeport%20Rd%20Houston%20TX%2077047&t=&z=15&ie=UTF8&iwloc=&output=embed"
+src="https://google.com"
 width="100%"
 height="450"
 style="border:0;border-radius:15px;"
@@ -409,7 +422,7 @@ Materiales Tricolor © 2026
 
 <a
 class="whatsapp"
-href="https://wa.me/18325252961"
+href="https://wa.me"
 target="_blank">
 WhatsApp
 </a>
