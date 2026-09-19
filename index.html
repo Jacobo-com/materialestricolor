@@ -34,8 +34,13 @@ z-index:999;
 }
 
 .logo-texto {
+  .logo-img{
+height:70px;
+width:auto;
+margin-right:12px;
+}
 text-decoration: none;
-font-size: 28px;
+font-size: 36px;
 font-weight: 800;
 letter-spacing: 0.5px;
 color: white;
@@ -61,14 +66,15 @@ font-weight:bold;
 
 .banner img{
 width:100%;
-height:320px;
+height:200px;
 object-fit:cover;
 display:block;
 }
 
+
 .hero{
 background:white;
-padding:70px 20px;
+padding:35px 20px;
 text-align:center;
 }
 
@@ -292,7 +298,14 @@ transition: transform 0.3s;
 transform: scale(1.1);
 background-color: #20ba5a;
 }
-
+.promo-bar{
+background:#ce1126;
+color:white;
+text-align:center;
+padding:10px;
+font-weight:bold;
+font-size:18px;
+}
 @media(max-width: 768px) {
 header {
 padding: 15px 20px;
@@ -317,7 +330,8 @@ font-size: 16px;
 
 <header>
 <a href="#" class="logo-texto">
-Materiales<span class="tricolor">Tricolor</span>
+<img src="images/logo.png" alt="Materiales Tricolor" class="logo-img">
+<span>Materiales Tricolor</span>
 </a>
 <nav>
 <a href="#productos">Productos</a>
@@ -325,7 +339,9 @@ Materiales<span class="tricolor">Tricolor</span>
 <a href="#contacto">Contacto</a>
 </nav>
 </header>
-
+<div class="promo-bar">
+📞 Llámenos hoy: (346) 245-4940 • Cotizaciones rápidas por WhatsApp
+</div>
 <section class="banner">
 <img src="images/banner materiales.png" alt="Materiales Tricolor">
 </section>
@@ -340,15 +356,30 @@ shingles TAMKO, Atlas y Timberline, cemento, varilla,
 SmartSide, siding, house wrap y mucho más.
 </p>
 <div class="botones">
+  <a href="tel:+13462454940" class="btn btn-rojo">
+📞 Llamar Ahora
+</a>
 <a href="#productos" class="btn btn-negro">Ver Productos</a>
 <a href="https://wa.me" target="_blank" class="btn btn-verde">Solicitar Cotización</a>
 </div>
+  <div class="beneficios">
+✅ Atención en Español e Inglés<br>
+✅ Entregas en Houston y alrededores<br>
+✅ Cotizaciones rápidas por WhatsApp<br>
+✅ Materiales para contratistas y propietarios
+</div>
 </section>
 
-<h2 class="section-title" id="productos">Nuestros Productos</h2>
+<h2 class=.beneficios{
+font-size:22px;
+line-height:1.8;
+margin-top:25px;
+font-weight:bold;
+color:#333;
+}"section-title" id="productos">Nuestros Productos</h2>
 
 <div class="grid">
-<a href="https://wa.me" target="_blank" class="card-link">
+<a href="https://wa.me/13462454940" target="_blank" class="btn btn-verde">Solicitar Cotización</a>
 <div class="card">
 <div class="badge-precio">Cotizar 💬</div>
 <img src="images/pickets.png">
@@ -356,7 +387,7 @@ SmartSide, siding, house wrap y mucho más.
 </div>
 </a>
 
-<a href="https://wa.me" target="_blank" class="card-link">
+<a href="https://wa.me/13462454940" target="_blank" class="card-link">
 <div class="card">
 <div class="badge-precio">Cotizar 💬</div>
 <img src="images/Madera tratada.png">
@@ -364,7 +395,7 @@ SmartSide, siding, house wrap y mucho más.
 </div>
 </a>
 
-<a href="https://wa.me" target="_blank" class="card-link">
+<a href="https://wa.me/13462454940" target="_blank" class="card-link">
 <div class="card">
 <div class="badge-precio">Cotizar 💬</div>
 <img src="images/sheetrock.png">
@@ -372,7 +403,7 @@ SmartSide, siding, house wrap y mucho más.
 </div>
 </a>
 
-<a href="https://wa.me" target="_blank" class="card-link">
+<a href="https://wa.me/13462454940" target="_blank" class="card-link">
 <div class="card">
 <div class="badge-precio">Cotizar 💬</div>
 <img src="images/OSB playwood.png">
@@ -380,7 +411,7 @@ SmartSide, siding, house wrap y mucho más.
 </div>
 </a>
 
-<a href="https://wa.me" target="_blank" class="card-link">
+<a href="https://wa.me/13462454940" target="_blank" class="card-link">
 <div class="card">
 <div class="badge-precio">Cotizar 💬</div>
 <img src="images/Teja single.png">
@@ -388,7 +419,7 @@ SmartSide, siding, house wrap y mucho más.
 </div>
 </a>
 
-<a href="https://wa.me" target="_blank" class="card-link">
+<a href="https://wa.me/13462454940" target="_blank" class="card-link">
 <div class="card">
 <div class="badge-precio">Cotizar 💬</div>
 <img src="images/cemento chtgpt.png">
@@ -396,7 +427,7 @@ SmartSide, siding, house wrap y mucho más.
 </div>
 </a>
 
-<a href="https://wa.me" target="_blank" class="card-link">
+<a href="https://wa.me/13462454940" target="_blank" class="card-link">
 <div class="card">
 <div class="badge-precio">Cotizar 💬</div>
 <img src="images/exterior.png">
@@ -404,7 +435,7 @@ SmartSide, siding, house wrap y mucho más.
 </div>
 </a>
 
-<a href="https://wa.me" target="_blank" class="card-link">
+<a href="https://wa.me/13462454940" target="_blank" class="card-link">
 <div class="card">
 <div class="badge-precio">Cotizar 💬</div>
 <img src="images/smartside.png">
@@ -412,7 +443,7 @@ SmartSide, siding, house wrap y mucho más.
 </div>
 </a>
 
-<a href="https://wa.me" target="_blank" class="card-link">
+<a href="https://wa.me/13462454940" target="_blank" class="card-link">
 <div class="card">
 <div class="badge-precio">Cotizar 💬</div>
 <img src="images/clavos y tornillos.png">
@@ -420,7 +451,7 @@ SmartSide, siding, house wrap y mucho más.
 </div>
 </a>
 
-<a href="https://wa.me" target="_blank" class="card-link">
+<a href="https://wa.me/13462454940" target="_blank" class="card-link">
 <div class="card">
 <div class="badge-precio">Cotizar 💬</div>
 <img src="images/siding.png">
@@ -438,7 +469,7 @@ SmartSide, siding, house wrap y mucho más.
 
 <div class="contenedor-mapa-seguro">
 <p>📍 ¿Cómo llegar a nuestra ubicación en Houston?</p>
-<a href="https://goo.gl" target="_blank" class="btn btn-rojo">
+<a href="https://www.google.com/maps/search/?api=1&query=13601+Bridgeport+Rd+Houston+TX+77047" target="_blank" class="btn btn-rojo">
 🗺️ Abrir en Google Maps
 </a>
 </div>
@@ -447,4 +478,4 @@ SmartSide, siding, house wrap y mucho más.
 <section class="contacto" id="contacto">
 <h2>Contacto</h2>
 <p><strong>Teléfono:</strong> <a href="tel:+13462454940">(346) 245-4940</a></p>
-<p><strong>WhatsApp:</strong> <a href="https://wa.me" target="_blank">(832) 525-2961</a></p>
+<p><strong>WhatsApp:</strong> <a href="https://wa.me/13462454940" target="_blank">(346) 245-4940</a></p>
