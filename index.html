@@ -461,11 +461,62 @@ color:#333;
 </div>
 
 <section class="calculadora" id="calculadora">
+
 <h2>Calculadora de Cercas</h2>
-<label>Longitud de la cerca (pies)</label>
-<input type="number" id="pies" placeholder="Ejemplo: 100">
-<button onclick="calcular()">Calcular Materiales</button>
-<div id="resultado"></div>
+
+<p>Longitud de la cerca (pies)</p>
+
+<input
+type="number"
+id="pies"
+placeholder="Ejemplo: 100">
+
+<br><br>
+
+<button onclick="calcularCerca()">
+Calcular
+</button>
+
+<div id="resultado" style="margin-top:20px;"></div>
+
+</section>
+
+<script>
+
+function calcularCerca() {
+
+let pies = Number(document.getElementById("pies").value);
+
+if (pies <= 0 || isNaN(pies)) {
+
+document.getElementById("resultado").innerHTML =
+"Por favor ingrese una medida válida.";
+
+return;
+
+}
+
+let postes = Math.ceil(pies / 8) + 1;
+let pickets = Math.ceil(pies * 1.83);
+let rieles = Math.ceil((pies / 8) * 3);
+let tornillos = pickets * 6;
+
+document.getElementById("resultado").innerHTML = `
+<h3>Materiales estimados</h3>
+
+<p>✅ Postes TRT: <b>${postes}</b></p>
+
+<p>✅ Pickets: <b>${pickets}</b></p>
+
+<p>✅ 2x4 Rails: <b>${rieles}</b></p>
+
+<p>✅ Tornillos: <b>${tornillos}</b></p>
+
+`;
+
+}
+
+</script>
 
 <div class="contenedor-mapa-seguro">
 <p>📍 ¿Cómo llegar a nuestra ubicación en Houston?</p>
